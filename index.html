@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhonePe Payment Gateway</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 200px; /* Adjust size as needed */
+            height: auto;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="PhonePe-Logo.png" alt="PhonePe Logo" class="logo">
+            <h2>Secure Payment </h2>
+        </header>
+        <form id="paymentForm">
+            <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter your card number" required>
+            </div>
+            <div class="form-group">
+                <label for="expiry">Expiry Date</label>
+                <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Cardholder Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter cardholder name" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="text" id="amount" name="amount" placeholder="Enter amount" required>
+            </div>
+            <button type="button" onclick="makePayment()">Pay Now</button>
+        </form>
+    </div>
+    <script>
+        function makePayment() {
+            var cardNumber = document.getElementById('cardNumber').value;
+            var expiry = document.getElementById('expiry').value;
+            var cvv = document.getElementById('cvv').value;
+            var name = document.getElementById('name').value;
+            var amount = document.getElementById('amount').value;
+
+            // Example validation (customize as needed)
+            if (!cardNumber || !expiry || !cvv || !name || !amount) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Example: Send payment details to server or integrate with PhonePe API
+            console.log('Payment Details:');
+            console.log('Card Number:', cardNumber);
+            console.log('Expiry Date:', expiry);
+            console.log('CVV:', cvv);
+            console.log('Cardholder Name:', name);
+            console.log('Amount:', amount);
+
+            // Simulate redirect to success page
+            alert('Payment successful!');
+            window.location.href = 'success.html'; // Redirect to success page
+        }
+    </script>
+</body>
+</html>
+
